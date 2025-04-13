@@ -99,17 +99,18 @@ public class JavaUtility {
 	 * @param year
 	 * @param month
 	 * @param day
-	 * @return
+	 * @return String
 	 */
 	public String getFixedDate(String dateFormat,int year,int month,int day)
 	{
 		Date fixedDate = null;
 		Calendar newCal = Calendar.getInstance();
-		if(month>=1 && month<=12 && day>=1 && day<=31)
+		if((month>=1 && month<=12 && day>=1 && day<=31) || (month==2 && day>=1 && day<=29))
 		{
 			newCal.set(year,month-1, day);
 			fixedDate = newCal.getTime();
 		}
+		
         // Format
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         String formattedDate = sdf.format(fixedDate);
