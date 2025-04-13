@@ -93,16 +93,23 @@ public class JavaUtility {
 		}
 		return sb.toString();
 	}
+	/**
+	 * This is a generic method to generate fixed calendar date as per format,date,month number given. 
+	 * @param dateFormat
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @return
+	 */
 	public String getFixedDate(String dateFormat,int year,int month,int day)
 	{
+		Date fixedDate = null;
 		Calendar newCal = Calendar.getInstance();
 		if(month>=1 && month<=12 && day>=1 && day<=31)
 		{
-			
+			newCal.set(year,month-1, day);
+			fixedDate = newCal.getTime();
 		}
-		newCal.set(year,month-1, day);
-        Date fixedDate = newCal.getTime();
-
         // Format
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         String formattedDate = sdf.format(fixedDate);
