@@ -6,7 +6,9 @@ import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -288,6 +290,12 @@ public class WebDriverUtility {
 			}
 		}
 		
+		
+	}
+	public WebElement handleOpenShadowRootTagElement(WebElement HostEle,String shadowRootElementCssSelectorLocator)
+	{
+		SearchContext shadowHost = HostEle.getShadowRoot();
+		return shadowHost.findElement(By.cssSelector(shadowRootElementCssSelectorLocator));
 		
 	}
 	public void switchToNewWindowWithURL(WebDriver driver,String partialURL)
