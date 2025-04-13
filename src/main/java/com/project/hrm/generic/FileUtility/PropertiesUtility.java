@@ -4,8 +4,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.vtiger.crm.genericIPathUtility.IPathUtility;
-
 
 
 public class PropertiesUtility {
@@ -17,7 +15,7 @@ public class PropertiesUtility {
 	 */
 	public String getDataFromPropertiesFile(String key) throws IOException
 	{
-		FileInputStream file = new FileInputStream(IPathUtility.propertiesFile);
+		FileInputStream file = new FileInputStream(IPathUtility.propertyFilePath);
 		Properties prop = new Properties();
 		prop.load(file);
 		String value = prop.getProperty(key);

@@ -7,8 +7,6 @@ import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.vtiger.crm.genericIPathUtility.IPathUtility;
-
 
 
 public class SimpleJSONUtility {
