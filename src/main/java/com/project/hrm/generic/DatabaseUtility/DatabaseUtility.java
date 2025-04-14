@@ -16,6 +16,13 @@ public class DatabaseUtility {
 	
 //	PreparedStatement ps;
 	Connection con;
+	/**
+	 * This is a generic database utility method to connect to a database.
+	 * @param dbUrl
+	 * @param UN
+	 * @param PWD
+	 * @throws Exception
+	 */
 	public void getDatabaseConnection(String dbUrl, String UN, String PWD) throws Exception
 	{
 		try {
